@@ -1,19 +1,21 @@
-# RSpec.describe StringWrapper do
-#     describe "#reverse" do
-#     it "reverses the string" do
-#         expect(StringWrapper.new.reverse(string)).to eq(gnirts)
-#       end
-#     end
+require "string_wrapper"
+RSpec.describe StringWrapper do
+    let(:wrap) { StringWrapper.new("Hello")}
+    describe "#reverse" do
+    it "reverses the string" do
+        expect(wrap.reverse).to eq("olleH")
+      end
+    end
   
-#     describe "#upcase" do
-#       it "converts the string to uppercase" do
-#         expect(StringWrapper.new.reverse(string)).to eq(STRING)
-#       end
-#     end
+    describe "#upcase" do
+      it "converts the string to uppercase" do
+        expect(wrap.upcase).to eq("HELLO")
+        end
+    end
   
-#     describe "#downcase" do
-#       it "converts the string to lowercase" do
-#         expect(StringWrapper.new.downcase(wORD)).to eq(word)
-#       end
-#     end
-#   end
+    describe "#downcase" do
+      it "converts the string to lowercase" do
+        expect(wrap.downcase).to eq("hello")
+      end
+    end
+  end
