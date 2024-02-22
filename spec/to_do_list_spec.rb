@@ -1,25 +1,24 @@
-# require "to_do_list"
-# RSpec.describe TodoList do
-#     let(:todo) { TodoList.new }
-#     describe "#add" do
-#       it "adds a todo to the list" do
-#         todo.add('grocery')
-#         expect(@todos).to eq(todos['grocery'])
-#         # expect(todo.add('grocery')).to be eq(todos[0])
-#       end
-#     end
+require "to_do_list"
+RSpec.describe TodoList do
+    let(:todo) { TodoList.new }
+    describe "#add" do
+      it "adds a todo to the list" do
+        expect(todo.add('grocery')).to eq(['grocery'])
+      end
+    end
   
-    # describe "#remove" do
-    #   it "removes a todo from the list" do
-    #     expect(todo.remove('grocery')).to not_be
+    describe "#remove" do
+      it "removes a todo from the list" do
+        todo.add('grocery')
+        todo.remove('grocery')
+        expect(todo.todos).to eq([])
 
-    #   end
-    # end
+      end
+    end
   
-    # describe "#todos" do
-    #   it "returns all todos" do
-    #     expect(todo.todos).to be @todos
-    #     # Fill in the test
-    #   end
-    # end
-#   end
+    describe "#todos" do
+      it "returns all todos" do
+        expect(todo.todos).to eq([])
+      end
+    end
+  end
